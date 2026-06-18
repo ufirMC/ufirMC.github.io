@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home | ufir</title>
-    <!-- Favicon link pointing to your avatar image -->
     <link rel="icon" type="image/png" href="/images/avatar.png">
     <style>
         /* Modern System Root Variables for Easy Theme Swapping */
@@ -168,7 +167,7 @@
             position: relative;
             display: inline-block;
             margin-bottom: 16px;
-            }
+        }
 
         .avatar {
             width: 96px;
@@ -226,25 +225,6 @@
             margin: 0 auto;
         }
 
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-            main {
-                padding: 0 20px;
-            }
-            main.home-main {
-                margin-top: -40px; 
-            }
-            header {
-                padding-bottom: 90px;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-
         /* Modern UI Cards */
         .card {
             background: var(--bg-card);
@@ -281,6 +261,15 @@
             transform: translateY(-2px);
         }
 
+        /* Clickable Horizontal Works Layout Rules */
+        .card-works-horizontal {
+            flex-direction: row; 
+            text-align: left; 
+            align-items: center; 
+            padding: 24px;
+            gap: 24px;
+        }
+
         /* Custom UI Accent Tints */
         .card-about { border-color: var(--border-default); }
         .card-about:hover { border-color: #3b82f6; }
@@ -293,7 +282,7 @@
         .card-play { border-color: var(--border-default); }
         .card-play:hover { border-color: #e11d48; }
 
-        /* Graphical Canvas & Fallbacks */
+        /* Graphic Canvas & Fallbacks */
         .image-placeholder {
             width: 100%;
             height: 160px;
@@ -325,6 +314,39 @@
         }
 
         .image-placeholder img[src] {
+            opacity: 1;
+        }
+
+        /* Specialized Square Image Containers inside Horizontal Row Cards */
+        .square-image-box {
+            width: 110px;
+            height: 110px;
+            border-radius: 12px;
+            background-color: var(--list-item-bg);
+            border: 1px dashed var(--border-default);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .square-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .square-image-box img[src] {
             opacity: 1;
         }
 
@@ -445,6 +467,38 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
+        /* Global Responsive System Media Overrides */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+            main {
+                padding: 0 20px;
+            }
+            main.home-main {
+                margin-top: -40px; 
+            }
+            header {
+                padding-bottom: 90px;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            .card-works-horizontal {
+                flex-direction: column;
+                text-align: center;
+                padding: 28px;
+            }
+            .square-image-box {
+                width: 100%;
+                height: 140px;
+            }
+            .tag-container {
+                justify-content: center;
+            }
+        }
+
         /* Global Footer Elements */
         footer {
             margin-top: auto;
@@ -475,7 +529,6 @@
 </head>
 <body>
 
-    <!-- Unified Navigation Shell -->
     <nav>
         <div class="nav-container">
             <button onclick="switchView('home')" id="nav-home" class="active">home</button>
@@ -491,7 +544,6 @@
         </button>
     </nav>
 
-    <!-- VIEW 1: HOME PANEL -->
     <div id="view-home" class="view active-view">
         <header>
             <div class="profile-container">
@@ -553,7 +605,6 @@
         </main>
     </div>
 
-    <!-- VIEW 2: ABOUT PANEL -->
     <div id="view-about" class="view">
         <main>
             <h1 class="view-title title-about">identity</h1>
@@ -566,14 +617,16 @@
         </main>
     </div>
 
-    <!-- VIEW 3: WORKS PANEL -->
     <div id="view-works" class="view">
         <main>
             <h1 class="view-title title-works">projects & configurations</h1>
             <div class="list-stack">
                 
-                <!-- Project Card 1 (Replace href value with your real URL) -->
-                <a href="https://github.com/ufir/repo-one" target="_blank" class="card card-works" style="flex-direction: row; text-align: left; align-items: center; padding: 24px 28px;">
+                <a href="https://github.com/ufir/repo-one" target="_blank" class="card card-works card-works-horizontal">
+                    <div class="square-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/project1.png" alt="project icon" onerror="this.style.opacity=0;">
+                    </div>
                     <div style="flex-grow: 1;">
                         <h2>automated configuration templates</h2>
                         <div class="card-subtext">automation framework &bull; v1.4.0</div>
@@ -586,8 +639,11 @@
                     </div>
                 </a>
 
-                <!-- Project Card 2 (Replace href value with your real URL) -->
-                <a href="https://github.com/ufir/repo-two" target="_blank" class="card card-works" style="flex-direction: row; text-align: left; align-items: center; padding: 24px 28px;">
+                <a href="https://github.com/ufir/repo-two" target="_blank" class="card card-works card-works-horizontal">
+                    <div class="square-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/project2.png" alt="project icon" onerror="this.style.opacity=0;">
+                    </div>
                     <div style="flex-grow: 1;">
                         <h2>custom infrastructure deployment</h2>
                         <div class="card-subtext">hypervisor architecture &bull; stable</div>
@@ -600,8 +656,11 @@
                     </div>
                 </a>
 
-                <!-- Project Card 3 (Replace href value with your real URL) -->
-                <a href="https://github.com/ufir/repo-three" target="_blank" class="card card-works" style="flex-direction: row; text-align: left; align-items: center; padding: 24px 28px;">
+                <a href="https://github.com/ufir/repo-three" target="_blank" class="card card-works card-works-horizontal">
+                    <div class="square-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/project3.png" alt="project icon" onerror="this.style.opacity=0;">
+                    </div>
                     <div style="flex-grow: 1;">
                         <h2>dotfiles sandbox asset tree</h2>
                         <div class="card-subtext">environment configuration &bull; rolling</div>
@@ -618,7 +677,6 @@
         </main>
     </div>
 
-    <!-- VIEW 4: LINKS PANEL -->
     <div id="view-links" class="view">
         <main>
             <h1 class="view-title title-links">external assets</h1>
@@ -642,7 +700,6 @@
         </main>
     </div>
 
-    <!-- VIEW 5: DOWNLOADS PANEL -->
     <div id="view-downloads" class="view">
         <main>
             <h1 class="view-title title-downloads">system files</h1>
@@ -660,7 +717,6 @@
         </main>
     </div>
 
-    <!-- VIEW 6: PLAY PANEL -->
     <div id="view-play" class="view">
         <main>
             <h1 class="view-title title-play">environments & nodes</h1>
@@ -678,7 +734,6 @@
         </main>
     </div>
 
-    <!-- VIEW 7: CONTACT PANEL -->
     <div id="view-contact" class="view">
         <main>
             <div class="card" style="max-width: 540px; margin: 20px auto 0 auto; border-color: var(--border-default); cursor: default; padding: 32px;">
@@ -693,12 +748,10 @@
         </main>
     </div>
 
-    <!-- Persistent Global Footer -->
     <footer>
         <p>&copy; 2026 ufir &bull; <button onclick="switchView('contact')">contact</button></p>
     </footer>
 
-    <!-- Scripts Engine -->
     <script>
         /* 1. SPA Router Script Segment */
         function switchView(viewName) {
