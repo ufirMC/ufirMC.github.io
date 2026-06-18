@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home | ufir</title>
-    <!-- Favicon link pointing to your avatar image -->
     <link rel="icon" type="image/png" href="/images/avatar.png">
     <style>
         /* Modern System Root Variables for Easy Theme Swapping */
@@ -287,8 +286,6 @@
         .card-works:hover { border-color: #f59e0b; }
         .card-links { border-color: var(--border-default); }
         .card-links:hover { border-color: #0d9488; }
-        .card-downloads { border-color: var(--border-default); }
-        .card-downloads:hover { border-color: #7c3aed; }
         .card-play { border-color: var(--border-default); }
         .card-play:hover { border-color: #e11d48; }
 
@@ -408,7 +405,6 @@
         .title-about { color: #3b82f6; border-bottom: 2px solid var(--border-default); }
         .title-works { color: #f59e0b; border-bottom: 2px solid var(--border-default); }
         .title-links { color: #0d9488; border-bottom: 2px solid var(--border-default); }
-        .title-downloads { color: #7c3aed; border-bottom: 2px solid var(--border-default); }
         .title-play { color: #e11d48; border-bottom: 2px solid var(--border-default); }
 
         .card h2 {
@@ -430,7 +426,6 @@
         .card-about h2 { color: #3b82f6; }
         .card-works h2 { color: #f59e0b; }
         .card-links h2 { color: #0d9488; }
-        .card-downloads h2 { color: #7c3aed; }
         .card-play h2 { color: #e11d48; }
 
         .card p {
@@ -581,14 +576,12 @@
 </head>
 <body>
 
-    <!-- Unified Navigation Shell -->
     <nav>
         <div class="nav-container">
             <button onclick="switchView('home')" id="nav-home" class="active">home</button>
             <button onclick="switchView('about')" id="nav-about">about</button>
             <button onclick="switchView('works')" id="nav-works">works</button>
             <button onclick="switchView('links')" id="nav-links">links</button>
-            <button onclick="switchView('downloads')" id="nav-downloads">downloads</button>
             <button onclick="switchView('play')" id="nav-play">play</button>
             <button onclick="switchView('contact')" id="nav-contact">contact</button>
         </div>
@@ -597,7 +590,6 @@
         </button>
     </nav>
 
-    <!-- VIEW 1: HOME PANEL -->
     <div id="view-home" class="view active-view">
         <header>
             <div class="profile-container">
@@ -628,15 +620,6 @@
                     <p>useful links & platforms</p>
                 </button>
 
-                <button onclick="switchView('downloads')" class="card card-downloads">
-                    <div class="image-placeholder">
-                        PLACEHOLDER - INSERT IMAGE
-                        <img src="/images/downloads.png" alt="downloads icon" onerror="this.style.opacity=0;">
-                    </div>
-                    <h2>downloads</h2>
-                    <p>my files & downloads</p>
-                </button>
-
                 <button onclick="switchView('play')" class="card card-play">
                     <div class="image-placeholder">
                         PLACEHOLDER - INSERT IMAGE
@@ -650,7 +633,6 @@
         </main>
     </div>
 
-    <!-- VIEW 2: ABOUT PANEL -->
     <div id="view-about" class="view">
         <main>
             <h1 class="view-title title-about">identity</h1>
@@ -663,13 +645,11 @@
         </main>
     </div>
 
-    <!-- VIEW 3: WORKS PANEL -->
     <div id="view-works" class="view">
         <main>
             <h1 class="view-title title-works">projects</h1>
             <div class="list-stack">
                 
-                <!-- Project Card 1 -->
                 <a href="https://github.com/ufir/repo-one" target="_blank" class="card card-works card-works-horizontal">
                     <div class="square-image-box">
                         IMAGE PLACEHOLDER
@@ -687,7 +667,6 @@
                     </div>
                 </a>
 
-                <!-- Project Card 2 -->
                 <a href="https://github.com/ufir/repo-two" target="_blank" class="card card-works card-works-horizontal">
                     <div class="square-image-box">
                         IMAGE PLACEHOLDER
@@ -705,7 +684,6 @@
                     </div>
                 </a>
 
-                <!-- Project Card 3 -->
                 <a href="https://github.com/ufir/repo-three" target="_blank" class="card card-works card-works-horizontal">
                     <div class="square-image-box">
                         IMAGE PLACEHOLDER
@@ -717,190 +695,3 @@
                         <p>not my best work.</p>
                         <div class="tag-container">
                             <span class="tag">Cross-Platform</span>
-                            <span class="tag">Roblox</span>
-                            <span class="tag">Game</span>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
-        </main>
-    </div>
-
-    <!-- VIEW 4: LINKS PANEL -->
-    <div id="view-links" class="view">
-        <main>
-            <h1 class="view-title title-links">socials & external assets</h1>
-            <div class="list-stack">
-                
-                <a href="https://github.com" target="_blank" class="card card-links" style="flex-direction: row; text-align: left; align-items: center; padding: 24px 28px;">
-                    <div style="flex-grow: 1;">
-                        <h2>biologyresources.github.io</h2>
-                        <p>a discrete EaglerCraft launcher supporting all major releases, even unoffical clients.</p>
-                    </div>
-                </a>
-
-                <a href="#" target="_blank" class="card card-links" style="flex-direction: row; text-align: left; align-items: center; padding: 24px 28px;">
-                    <div style="flex-grow: 1;">
-                        <h2>@ufirMC on YouTube | 1,000+ Subscribers</h2>
-                        <p>my primary and most popular social media.</p>
-                    </div>
-                </a>
-
-            </div>
-        </main>
-    </div>
-
-    <!-- VIEW 5: DOWNLOADS PANEL -->
-    <div id="view-downloads" class="view">
-        <main>
-            <h1 class="view-title title-downloads">system files</h1>
-            <div class="list-stack">
-                
-                <div class="card card-downloads" style="flex-direction: row; justify-content: space-between; text-align: left; align-items: center; padding: 24px; cursor: default;">
-                    <div>
-                        <h2>configuration_package.zip</h2>
-                        <p>contains initialization scripts and backup environments.</p>
-                    </div>
-                    <a href="/downloads/files/sample.zip" class="btn" style="background: #7c3aed;" download>get file</a>
-                </div>
-
-            </div>
-        </main>
-    </div>
-
-    <!-- VIEW 6: PLAY PANEL -->
-    <div id="view-play" class="view">
-        <main>
-            <h1 class="view-title title-play">environments & nodes</h1>
-            <div class="play-grid">
-                
-                <!-- Play Card 1 -->
-                <a href="https://example.com/play1" target="_blank" class="card card-play">
-                    <div class="play-image-box">
-                        IMAGE PLACEHOLDER
-                        <img src="/images/play1.png" alt="game icon" onerror="this.style.opacity=0;">
-                    </div>
-                    <h2>experiment alpha</h2>
-                    <p>interactive front-end sandbox environment running isolated client logical matrices.</p>
-                </a>
-
-                <!-- Play Card 2 -->
-                <a href="https://example.com/play2" target="_blank" class="card card-play">
-                    <div class="play-image-box">
-                        IMAGE PLACEHOLDER
-                        <img src="/images/play2.png" alt="game icon" onerror="this.style.opacity=0;">
-                    </div>
-                    <h2>game element beta</h2>
-                    <p>lightweight client side implementation testing automated gameplay canvas variables.</p>
-                </a>
-
-                <!-- Play Card 3 -->
-                <a href="https://example.com/play3" target="_blank" class="card card-play">
-                    <div class="play-image-box">
-                        IMAGE PLACEHOLDER
-                        <img src="/images/play3.png" alt="game icon" onerror="this.style.opacity=0;">
-                    </div>
-                    <h2>node interface check</h2>
-                    <p>monitoring module displaying active remote multiplayer session variables.</p>
-                </a>
-
-                <!-- Play Card 4 -->
-                <a href="https://example.com/play4" target="_blank" class="card card-play">
-                    <div class="play-image-box">
-                        IMAGE PLACEHOLDER
-                        <img src="/images/play4.png" alt="game icon" onerror="this.style.opacity=0;">
-                    </div>
-                    <h2>simulation matrix</h2>
-                    <p>canvas rendering testing local mathematical distribution algorithms in real time.</p>
-                </a>
-
-                <!-- Play Card 5 -->
-                <a href="https://example.com/play5" target="_blank" class="card card-play">
-                    <div class="play-image-box">
-                        IMAGE PLACEHOLDER
-                        <img src="/images/play5.png" alt="game icon" onerror="this.style.opacity=0;">
-                    </div>
-                    <h2>vga rendering core</h2>
-                    <p>retro engine simulation processing raw graphical asset arrays via pure javascript loops.</p>
-                </a>
-
-                <!-- Play Card 6 -->
-                <a href="https://example.com/play6" target="_blank" class="card card-play">
-                    <div class="play-image-box">
-                        IMAGE PLACEHOLDER
-                        <img src="/images/play6.png" alt="game icon" onerror="this.style.opacity=0;">
-                    </div>
-                    <h2>terminal environment</h2>
-                    <p>mock command line terminal environment tracking local client device configurations.</p>
-                </a>
-
-            </div>
-        </main>
-    </div>
-
-    <!-- VIEW 7: CONTACT PANEL -->
-    <div id="view-contact" class="view">
-        <main>
-            <div class="card" style="max-width: 540px; margin: 20px auto 0 auto; border-color: var(--border-default); cursor: default; padding: 32px;">
-                <h2 style="color: var(--text-main); margin-bottom: 16px; width: 100%; text-align: left;">reach out</h2>
-                
-                <ul class="contact-list">
-                    <li><strong>matrix:</strong> <span>@ufir:matrix.org</span></li>
-                    <li><strong>discord:</strong> <span>ufir</span></li>
-                    <li><strong>email:</strong> <span>ufir@example.com</span></li>
-                </ul>
-            </div>
-        </main>
-    </div>
-
-    <!-- Persistent Global Footer -->
-    <footer>
-        <p>&copy; 2026 ufir &bull; <button onclick="switchView('contact')">contact</button></p>
-    </footer>
-
-    <!-- Scripts Engine -->
-    <script>
-        /* 1. SPA Router Script Segment */
-        function switchView(viewName) {
-            const views = document.querySelectorAll('.view');
-            views.forEach(view => { view.classList.remove('active-view'); });
-
-            const navButtons = document.querySelectorAll('nav button');
-            navButtons.forEach(btn => { btn.classList.remove('active'); });
-
-            const selectedView = document.getElementById('view-' + viewName);
-            if (selectedView) { selectedView.classList.add('active-view'); }
-
-            const selectedNavButton = document.getElementById('nav-' + viewName);
-            if (selectedNavButton) { selectedNavButton.classList.add('active'); }
-
-            window.scrollTo(0, 0);
-        }
-
-        /* 2. Light / Dark Theme Sync Machine */
-        function toggleTheme() {
-            const currentTheme = document.body.getAttribute('data-theme');
-            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.body.setAttribute('data-theme', targetTheme);
-            localStorage.setItem('theme', targetTheme);
-            updateThemeButtonText(targetTheme);
-        }
-
-        function updateThemeButtonText(theme) {
-            const btn = document.getElementById('theme-toggle-btn');
-            if (theme === 'dark') {
-                btn.innerHTML = '☀️ Light';
-            } else {
-                btn.innerHTML = '🌙 Dark';
-            }
-        }
-
-        // Initialize user preferred theme setting
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.body.setAttribute('data-theme', savedTheme);
-        updateThemeButtonText(savedTheme);
-    </script>
-</body>
-</html>
