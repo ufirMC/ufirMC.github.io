@@ -455,23 +455,6 @@
             border: 1px solid var(--border-default);
         }
 
-        /* Action Buttons */
-        .btn {
-            display: inline-block;
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
         /* Clean List Layouts */
         .contact-list {
             width: 100%;
@@ -695,3 +678,163 @@
                         <p>not my best work.</p>
                         <div class="tag-container">
                             <span class="tag">Cross-Platform</span>
+                            <span class="tag">Roblox</span>
+                            <span class="tag">Game</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="view-links" class="view">
+        <main>
+            <h1 class="view-title title-links">socials & external assets</h1>
+            <div class="list-stack">
+                
+                <a href="https://github.com" target="_blank" class="card card-links" style="flex-direction: row; text-align: left; align-items: center; padding: 24px 28px;">
+                    <div style="flex-grow: 1;">
+                        <h2>biologyresources.github.io</h2>
+                        <p>a discrete EaglerCraft launcher supporting all major releases, even unoffical clients.</p>
+                    </div>
+                </a>
+
+                <a href="#" target="_blank" class="card card-links" style="flex-direction: row; text-align: left; align-items: center; padding: 24px 28px;">
+                    <div style="flex-grow: 1;">
+                        <h2>@ufirMC on YouTube | 1,000+ Subscribers</h2>
+                        <p>my primary and most popular social media.</p>
+                    </div>
+                </a>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="view-play" class="view">
+        <main>
+            <h1 class="view-title title-play">environments & nodes</h1>
+            <div class="play-grid">
+                
+                <a href="https://example.com/play1" target="_blank" class="card card-play">
+                    <div class="play-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play1.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>experiment alpha</h2>
+                    <p>interactive front-end sandbox environment running isolated client logical matrices.</p>
+                </a>
+
+                <a href="https://example.com/play2" target="_blank" class="card card-play">
+                    <div class="play-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play2.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>game element beta</h2>
+                    <p>lightweight client side implementation testing automated gameplay canvas variables.</p>
+                </a>
+
+                <a href="https://example.com/play3" target="_blank" class="card card-play">
+                    <div class="play-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play3.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>node interface check</h2>
+                    <p>monitoring module displaying active remote multiplayer session variables.</p>
+                </a>
+
+                <a href="https://example.com/play4" target="_blank" class="card card-play">
+                    <div class="play-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play4.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>simulation matrix</h2>
+                    <p>canvas rendering testing local mathematical distribution algorithms in real time.</p>
+                </a>
+
+                <a href="https://example.com/play5" target="_blank" class="card card-play">
+                    <div class="play-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play5.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>vga rendering core</h2>
+                    <p>retro engine simulation processing raw graphical asset arrays via pure javascript loops.</p>
+                </a>
+
+                <a href="https://example.com/play6" target="_blank" class="card card-play">
+                    <div class="play-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play6.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>terminal environment</h2>
+                    <p>mock command line terminal environment tracking local client device configurations.</p>
+                </a>
+
+            </div>
+        </main>
+    </div>
+
+    <div id="view-contact" class="view">
+        <main>
+            <div class="card" style="max-width: 540px; margin: 20px auto 0 auto; border-color: var(--border-default); cursor: default; padding: 32px;">
+                <h2 style="color: var(--text-main); margin-bottom: 16px; width: 100%; text-align: left;">reach out</h2>
+                
+                <ul class="contact-list">
+                    <li><strong>matrix:</strong> <span>@ufir:matrix.org</span></li>
+                    <li><strong>discord:</strong> <span>ufir</span></li>
+                    <li><strong>email:</strong> <span>ufir@example.com</span></li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ufir &bull; <button onclick="switchView('contact')">contact</button></p>
+    </footer>
+
+    <script>
+        /* 1. SPA Router Script Segment */
+        function switchView(viewName) {
+            const views = document.querySelectorAll('.view');
+            views.forEach(view => { view.classList.remove('active-view'); });
+
+            const navButtons = document.querySelectorAll('nav button');
+            navButtons.forEach(btn => { btn.classList.remove('active'); });
+
+            const selectedView = document.getElementById('view-' + viewName);
+            if (selectedView) { selectedView.classList.add('active-view'); }
+
+            const selectedNavButton = document.getElementById('nav-' + viewName);
+            if (selectedNavButton) { selectedNavButton.classList.add('active'); }
+
+            window.scrollTo(0, 0);
+        }
+
+        /* 2. Light / Dark Theme Sync Machine */
+        function toggleTheme() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.body.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('theme', targetTheme);
+            updateThemeButtonText(targetTheme);
+        }
+
+        function updateThemeButtonText(theme) {
+            const btn = document.getElementById('theme-toggle-btn');
+            if (theme === 'dark') {
+                btn.innerHTML = '☀️ Light';
+            } else {
+                btn.innerHTML = '🌙 Dark';
+            }
+        }
+
+        // Initialize default theme from storage
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            updateThemeButtonText(savedTheme);
+        });
+    </script>
+</body>
+</html>
