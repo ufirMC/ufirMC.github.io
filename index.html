@@ -217,6 +217,15 @@
             gap: 24px;
         }
 
+        /* Specialized Play 3-Column Grid Configuration */
+        .play-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .list-stack {
             display: grid;
             grid-template-columns: 1fr;
@@ -317,7 +326,7 @@
             opacity: 1;
         }
 
-        /* Specialized Square Image Containers inside Horizontal Row Cards */
+        /* Specialized Square Image Containers inside Cards */
         .square-image-box {
             width: 110px;
             height: 110px;
@@ -350,6 +359,13 @@
             opacity: 1;
         }
 
+        /* Square Image adjustments for vertical grid cards (Play view) */
+        .card .square-image-box {
+            width: 100%;
+            height: 140px;
+            margin-bottom: 18px;
+        }
+
         /* Dynamic Typography Styles */
         .view-title {
             font-size: 1.8rem;
@@ -369,7 +385,7 @@
         .title-play { color: #e11d48; border-bottom: 2px solid var(--border-default); }
 
         .card h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 4px;
             letter-spacing: -0.01em;
@@ -468,6 +484,12 @@
         }
 
         /* Global Responsive System Media Overrides */
+        @media (max-width: 992px) {
+            .play-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -490,9 +512,12 @@
                 text-align: center;
                 padding: 28px;
             }
-            .square-image-box {
+            .card-works-horizontal .square-image-box {
                 width: 100%;
                 height: 140px;
+            }
+            .play-grid {
+                grid-template-columns: 1fr;
             }
             .tag-container {
                 justify-content: center;
@@ -517,7 +542,7 @@
             color: var(--text-muted);
             font-family: inherit;
             cursor: pointer;
-            text-decoration: none;
+            text-decoration: text-decoration;
             font-weight: 500;
         }
         
@@ -720,15 +745,61 @@
     <div id="view-play" class="view">
         <main>
             <h1 class="view-title title-play">environments & nodes</h1>
-            <div class="card-grid" style="max-width: 1200px; margin: 0 auto;">
+            <div class="play-grid">
                 
-                <div class="card card-play" style="cursor: default; padding: 24px;">
-                    <h2 style="width: 100%; text-align: left;">dedicated node status</h2>
-                    <p style="margin-bottom: 16px; width: 100%; text-align: left;">multiplayer testing terminal</p>
-                    <div style="background: var(--list-item-bg); border: 1px solid var(--border-default); width: 100%; padding: 12px; border-radius: 8px; font-family: monospace; font-size: 0.9rem; color: var(--text-main); text-align: left;">
-                        host: coming soon
+                <a href="https://example.com/play1" target="_blank" class="card card-play">
+                    <div class="square-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play1.png" alt="game icon" onerror="this.style.opacity=0;">
                     </div>
-                </div>
+                    <h2>experiment alpha</h2>
+                    <p>interactive front-end sandbox environment running isolated client logical matrices.</p>
+                </a>
+
+                <a href="https://example.com/play2" target="_blank" class="card card-play">
+                    <div class="square-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play2.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>game element beta</h2>
+                    <p>lightweight client side implementation testing automated gameplay canvas variables.</p>
+                </a>
+
+                <a href="https://example.com/play3" target="_blank" class="card card-play">
+                    <div class="square-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play3.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>node interface check</h2>
+                    <p>monitoring module displaying active remote multiplayer session variables.</p>
+                </a>
+
+                <a href="https://example.com/play4" target="_blank" class="card card-play">
+                    <div class="square-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play4.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>simulation matrix</h2>
+                    <p>canvas rendering testing local mathematical distribution algorithms in real time.</p>
+                </a>
+
+                <a href="https://example.com/play5" target="_blank" class="card card-play">
+                    <div class="square-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play5.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>vga rendering core</h2>
+                    <p>retro engine simulation processing raw graphical asset arrays via pure javascript loops.</p>
+                </a>
+
+                <a href="https://example.com/play6" target="_blank" class="card card-play">
+                    <div class="square-image-box">
+                        IMAGE PLACEHOLDER
+                        <img src="/images/play6.png" alt="game icon" onerror="this.style.opacity=0;">
+                    </div>
+                    <h2>terminal environment</h2>
+                    <p>mock command line terminal environment tracking local client device configurations.</p>
+                </a>
 
             </div>
         </main>
