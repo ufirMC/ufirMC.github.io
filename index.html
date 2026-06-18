@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home | ufir</title>
+    <!-- Favicon link pointing to your avatar image -->
     <link rel="icon" type="image/png" href="/images/avatar.png">
     <style>
         /* Modern System Root Variables for Easy Theme Swapping */
@@ -326,7 +327,7 @@
             opacity: 1;
         }
 
-        /* Specialized Square Image Containers inside Cards */
+        /* Specialized Square Image Containers inside Horizontal Row Cards */
         .square-image-box {
             width: 110px;
             height: 110px;
@@ -359,11 +360,37 @@
             opacity: 1;
         }
 
-        /* Square Image adjustments for vertical grid cards (Play view) */
-        .card .square-image-box {
+        /* Specialized Play Square Image Structure (Top Block Layout) */
+        .play-image-box {
             width: 100%;
             height: 140px;
+            border-radius: 12px;
+            background-color: var(--list-item-bg);
+            border: 1px dashed var(--border-default);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
             margin-bottom: 18px;
+        }
+
+        .play-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .play-image-box img[src] {
+            opacity: 1;
         }
 
         /* Dynamic Typography Styles */
@@ -554,6 +581,7 @@
 </head>
 <body>
 
+    <!-- Unified Navigation Shell -->
     <nav>
         <div class="nav-container">
             <button onclick="switchView('home')" id="nav-home" class="active">home</button>
@@ -569,6 +597,7 @@
         </button>
     </nav>
 
+    <!-- VIEW 1: HOME PANEL -->
     <div id="view-home" class="view active-view">
         <header>
             <div class="profile-container">
@@ -630,6 +659,7 @@
         </main>
     </div>
 
+    <!-- VIEW 2: ABOUT PANEL -->
     <div id="view-about" class="view">
         <main>
             <h1 class="view-title title-about">identity</h1>
@@ -642,11 +672,13 @@
         </main>
     </div>
 
+    <!-- VIEW 3: WORKS PANEL -->
     <div id="view-works" class="view">
         <main>
             <h1 class="view-title title-works">projects & configurations</h1>
             <div class="list-stack">
                 
+                <!-- Project Card 1 -->
                 <a href="https://github.com/ufir/repo-one" target="_blank" class="card card-works card-works-horizontal">
                     <div class="square-image-box">
                         IMAGE PLACEHOLDER
@@ -664,6 +696,7 @@
                     </div>
                 </a>
 
+                <!-- Project Card 2 -->
                 <a href="https://github.com/ufir/repo-two" target="_blank" class="card card-works card-works-horizontal">
                     <div class="square-image-box">
                         IMAGE PLACEHOLDER
@@ -681,6 +714,7 @@
                     </div>
                 </a>
 
+                <!-- Project Card 3 -->
                 <a href="https://github.com/ufir/repo-three" target="_blank" class="card card-works card-works-horizontal">
                     <div class="square-image-box">
                         IMAGE PLACEHOLDER
@@ -702,6 +736,7 @@
         </main>
     </div>
 
+    <!-- VIEW 4: LINKS PANEL -->
     <div id="view-links" class="view">
         <main>
             <h1 class="view-title title-links">external assets</h1>
@@ -725,6 +760,7 @@
         </main>
     </div>
 
+    <!-- VIEW 5: DOWNLOADS PANEL -->
     <div id="view-downloads" class="view">
         <main>
             <h1 class="view-title title-downloads">system files</h1>
@@ -742,13 +778,15 @@
         </main>
     </div>
 
+    <!-- VIEW 6: PLAY PANEL -->
     <div id="view-play" class="view">
         <main>
             <h1 class="view-title title-play">environments & nodes</h1>
             <div class="play-grid">
                 
+                <!-- Play Card 1 -->
                 <a href="https://example.com/play1" target="_blank" class="card card-play">
-                    <div class="square-image-box">
+                    <div class="play-image-box">
                         IMAGE PLACEHOLDER
                         <img src="/images/play1.png" alt="game icon" onerror="this.style.opacity=0;">
                     </div>
@@ -756,8 +794,9 @@
                     <p>interactive front-end sandbox environment running isolated client logical matrices.</p>
                 </a>
 
+                <!-- Play Card 2 -->
                 <a href="https://example.com/play2" target="_blank" class="card card-play">
-                    <div class="square-image-box">
+                    <div class="play-image-box">
                         IMAGE PLACEHOLDER
                         <img src="/images/play2.png" alt="game icon" onerror="this.style.opacity=0;">
                     </div>
@@ -765,8 +804,9 @@
                     <p>lightweight client side implementation testing automated gameplay canvas variables.</p>
                 </a>
 
+                <!-- Play Card 3 -->
                 <a href="https://example.com/play3" target="_blank" class="card card-play">
-                    <div class="square-image-box">
+                    <div class="play-image-box">
                         IMAGE PLACEHOLDER
                         <img src="/images/play3.png" alt="game icon" onerror="this.style.opacity=0;">
                     </div>
@@ -774,8 +814,9 @@
                     <p>monitoring module displaying active remote multiplayer session variables.</p>
                 </a>
 
+                <!-- Play Card 4 -->
                 <a href="https://example.com/play4" target="_blank" class="card card-play">
-                    <div class="square-image-box">
+                    <div class="play-image-box">
                         IMAGE PLACEHOLDER
                         <img src="/images/play4.png" alt="game icon" onerror="this.style.opacity=0;">
                     </div>
@@ -783,8 +824,9 @@
                     <p>canvas rendering testing local mathematical distribution algorithms in real time.</p>
                 </a>
 
+                <!-- Play Card 5 -->
                 <a href="https://example.com/play5" target="_blank" class="card card-play">
-                    <div class="square-image-box">
+                    <div class="play-image-box">
                         IMAGE PLACEHOLDER
                         <img src="/images/play5.png" alt="game icon" onerror="this.style.opacity=0;">
                     </div>
@@ -792,8 +834,9 @@
                     <p>retro engine simulation processing raw graphical asset arrays via pure javascript loops.</p>
                 </a>
 
+                <!-- Play Card 6 -->
                 <a href="https://example.com/play6" target="_blank" class="card card-play">
-                    <div class="square-image-box">
+                    <div class="play-image-box">
                         IMAGE PLACEHOLDER
                         <img src="/images/play6.png" alt="game icon" onerror="this.style.opacity=0;">
                     </div>
@@ -805,6 +848,7 @@
         </main>
     </div>
 
+    <!-- VIEW 7: CONTACT PANEL -->
     <div id="view-contact" class="view">
         <main>
             <div class="card" style="max-width: 540px; margin: 20px auto 0 auto; border-color: var(--border-default); cursor: default; padding: 32px;">
@@ -819,10 +863,12 @@
         </main>
     </div>
 
+    <!-- Persistent Global Footer -->
     <footer>
         <p>&copy; 2026 ufir &bull; <button onclick="switchView('contact')">contact</button></p>
     </footer>
 
+    <!-- Scripts Engine -->
     <script>
         /* 1. SPA Router Script Segment */
         function switchView(viewName) {
